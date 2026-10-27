@@ -9,12 +9,12 @@ Payout Gate is a lightweight, browser-first prototype with two views:
 
 ## Live Zcash data
 
-The app uses the public ZecBlock v1 API documented at https://zecblock.com/docs:
+The app currently targets the existing public mainnet REST API documented in the ZecBlock repository infrastructure notes (legacy CipherScan-compatible hostname), because the new v1 host may not yet be enabled for public browser access:
 
-- `GET /v1/network/blockchain-info` for network status.
-- `GET /v1/blocks?limit=1` for recent block data.
-- `GET /v1/transactions/:txid` for transaction lookup.
-- `POST /v1/transactions/broadcast` to submit an already-signed raw transaction, with no private key accepted by the app.
+- `GET /blockchain-info` for network status.
+- `GET /blocks?limit=1` for recent block data.
+- `GET /tx/:txid` for transaction lookup.
+- `POST /tx/broadcast` to submit an already-signed raw transaction, with no private key accepted by the app.
 
 The UI displays provider responses and failures honestly. API coverage, response shape, availability, rate limits, and browser CORS policy depend on the provider. The app must not be treated as a Zcash full node or wallet.
 
